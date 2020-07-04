@@ -2,35 +2,39 @@
 {% block content %}
 
 <div class="row">
-    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12 add-recipe-form">
+    <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12 add-recipe-form">
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">local_dining</i>
-                <input id="food_name" name="food_name" type="text" class="validate">
+                <input id="food_name" name="food_name" type="text" class="validate" value="{{recipe.food_name}}">
                 <label for="icon_prefix">Food Name</label>
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">public</i>
-                <input id="country" name="country" type="text" class="validate">
+                <input id="country" name="country" type="text" class="validate" value="{{recipe.country}}">
                 <label for="icon_prefix">Country Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_numbered</i>
-                <input id="Ingredients" name="Ingredients" type="text" class="validate">
+                <input id="ingredients" name="ingredients" type="text" class="validate" value="{{recipe.ingredients}}">
                 <label for="icon_prefix">Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
-                <textarea id="Preparation" name="Preparation" class="materialize-textarea"></textarea>
+                <textarea id="preparation" name="preparation"
+                    class="materialize-textarea">{{recipe.preparation}}</textarea>
                 <label for="icon_prefix2">Preparation Steps</label>
             </div>
         </div>
         <div class="row">
-            <button class="publish-btn btn waves-effect waves-light" type="submit" name="action">Done
+            <button class="save-btn btn waves-effect waves-light" type="submit" name="action">Save
+                <i class="material-icons"></i>
+            </button>
+            <button class="cancel-btn btn waves-effect waves-light" type="submit" name="action">Cancel
                 <i class="material-icons"></i>
             </button>
         </div>
