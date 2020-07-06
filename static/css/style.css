@@ -1,4 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Modak&family=Roboto:ital,wght@1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  letter-spacing: 2px;
+  background: linear-gradient(
+                     rgba(20, 20, 20, 0.5),
+                     rgba(20, 20, 20, 0.5)),
+                     url( "../images/home-page.jpg");
+}
+
+.container {
+  width: 100%;
+}
+
+/*------------------------ Home-page --*/
+h1,h2,h5 {
+  text-align: center;
+  color: #fff;
+  margin-top: 75px;
+}
+
+h1,h2 {
+  font-family: "Pacifico", sans-serif;
+  letter-spacing: 5px;
+}
+
+h5 {
+  font-family: "Roboto", sans-serif;
+}
+
+hr {
+  background-color: orange;
+  height: 3px;
+  width: 75%;
+  margin-top: 75px;
+  border: none;
+  border-radius: 50%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.buttons {
+  margin: 10%;
+  text-align: center;
+}
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.color-2 {
+  background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+/*------------------------ Sidebar --*/
+.sidebar {
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 0;
+  width: 200px;
+  background-color: #02001f3b;
+  position: fixed;
+  height: 99%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  padding: 16px;
+  margin-top: 50px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 120%;
+  font-weight: 600;
+}
+
+.sidebar a:hover {
+  background-color: #02001fc2;
+  color: orange
+}
+
+.logo {
+  font-family: "Pacifico", sans-serif !important;
+  font-size: 180% !important;
+  font-weight: 400 !important;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 100%;
+}
+
 /*------------------------ Recipes --*/
+.food-name {
+  text-transform: capitalize;
+}
+
+.country-name {
+  text-transform: uppercase;
+}
+
 .ul-recipes {
     margin-top: 50px;
 }
@@ -14,6 +150,11 @@
 .recipe-headline {
     width: 33%;
     padding-left: 20px;
+    line-height: 35px;
+}
+
+.collapsible-body p {
+  color: #fff;
 }
 
 /*------------------------ AddRecipe --*/
@@ -21,7 +162,198 @@
     margin-top: 50px;
 }
 
+.input-field .prefix {
+  color: #ff9800;
+}
+
+.input-field input,textarea {
+  color: #fff;
+}
+
+.country-icon {
+  color: #03a9f4 !important;
+}
+
 .publish-btn {
     margin-left: 50px;
 }
+
+/*------------------------ EditRecipe --*/
+.save-btn {
+    margin-left: 50px;
+}
+
+.cancel-btn {
+    margin-left: 5px;
+    background-color: #757575;
+}
+
+.cancel-btn:hover {
+    background-color: #a5a5a5;
+}
+
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      margin: 0;
+      height: auto;
+      position: relative;
+    }
+
+    .sidebar a {text-align: center;}
+    div.content {margin-left: 0;}
+
+    h1,h2,h5 {
+      text-align: center;
+      color: #fff;
+      margin-top: 75px;
+    }
+
+    h1,h2 {
+      font-family: "Pacifico", sans-serif;
+      letter-spacing: 5px;
+    }
+
+    h5 {
+      font-family: "Roboto", sans-serif;
+    }
+
+    hr {
+      background-color: orange;
+      height: 3px;
+      width: 75%;
+      margin-top: 75px;
+      border: none;
+      border-radius: 50%;
+    }
+
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .buttons {
+      margin: 10%;
+      text-align: center;
+    }
+
+    .btn-hover {
+      width: 200px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      margin: 20px;
+      height: 55px;
+      text-align:center;
+      border: none;
+      background-size: 300% 100%;
+
+      border-radius: 50px;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+
+    .btn-hover:hover {
+      background-position: 100% 0;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+
+    .btn-hover:focus {
+      outline: none;
+    }
+
+    .btn-hover.color-2 {
+      background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+      box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+    }
+  }
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+    .sidebar {
+      margin: 0;
+
+    }
+    h1,h2,h5 {
+      text-align: center;
+      color: #fff;
+      margin-top: 75px;
+    }
+
+    h1,h2 {
+      font-family: "Pacifico", sans-serif;
+      letter-spacing: 5px;
+    }
+
+    h5 {
+      font-family: "Roboto", sans-serif;
+    }
+
+    hr {
+      background-color: orange;
+      height: 3px;
+      width: 75%;
+      margin-top: 75px;
+      border: none;
+      border-radius: 50%;
+    }
+
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .buttons {
+      margin: 10%;
+      text-align: center;
+    }
+
+    .btn-hover {
+      width: 200px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      margin: 20px;
+      height: 55px;
+      text-align:center;
+      border: none;
+      background-size: 300% 100%;
+
+      border-radius: 50px;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+
+    .btn-hover:hover {
+      background-position: 100% 0;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+
+    .btn-hover:focus {
+      outline: none;
+    }
+
+    .btn-hover.color-2 {
+      background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+      box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+    }
+  }
 
