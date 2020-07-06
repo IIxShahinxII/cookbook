@@ -10,12 +10,12 @@
                 <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
                     class="waves-effect waves-light btn small-btn" style="background-color: #ce1515c4;">Delete</a>
             </div>
-            <div class="col s4 recipe-headline">
+            <div class="col s4 recipe-headline food-name">
                 <strong>
                     <span>Food => {{recipe.food_name}}</span>
                 </strong>
             </div>
-            <div class="col s4 recipe-headline">
+            <div class="col s4 recipe-headline country-name">
                 <strong>
                     <span>Country => {{recipe.country}}</span>
                 </strong>
