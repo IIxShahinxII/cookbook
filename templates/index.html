@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="content" id="#home-page">
+    <div>
+        <h1>Welcome to EasyCook</h1>
+        <h5>in our website you are going to see different recipes from all around the world and also you can be part of
+            our
+            community and create your own recipes and share it with others.
+        </h5>
+    </div>
+    <hr>
+    <div>
+        <h2>Let's get your first recipe done !</h2>
+    </div>
+    <div class="buttons">
+        <button class="btn-hover color-1"><a href="{{ url_for('add_recipe') }}">Create</a></button>
+    </div>
+</div>
+
+{% endblock %}
