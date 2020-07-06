@@ -12,6 +12,11 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
+@app.route('/home_page')
+def home_page():
+    return render_template("index.html")
+
+
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
@@ -33,6 +38,25 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template('editrecipe.html', recipe=the_recipe)
+
+
+@app.route('/update_recipe/<recipe_id>', methods=['POST'])
+def update_recipe(recipe_id):
+    recipes = mongo.db.recipes
+    recipes.update({"_id": ObjectId(recipe_id)},
+                   {
+        'food_name': request.form.get('food_name'),
+        'country': request.form.get('country'),
+        'ingredients': request.form.get('ingredients'),
+        'preparation': request.form.get('preparation')
+    })
+    return redirect(url_for('get_recipes'))
+
+
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('get_recipes'))
 
 
 if __name__ == '__main__':
