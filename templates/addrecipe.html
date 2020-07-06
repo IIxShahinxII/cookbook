@@ -4,28 +4,28 @@
 <div class="row">
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12 add-recipe-form">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col-xsm s12 col s6">
                 <i class="material-icons prefix">local_dining</i>
-                <input id="food_name" name="food_name" type="text" class="validate">
+                <input id="food_name" name="food_name" type="text" class="validate" required>
                 <label for="icon_prefix">Food Name</label>
             </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">public</i>
-                <input id="country" name="country" type="text" class="validate">
+            <div class="input-field col-xsm s12 col s6">
+                <i class="material-icons prefix country-icon">public</i>
+                <input id="country" name="country" type="text" class="validate" required>
                 <label for="icon_prefix">Country Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_numbered</i>
-                <input id="ingredients" name="ingredients" type="text" class="validate">
+                <input id="ingredients" name="ingredients" type="text" class="validate" required>
                 <label for="icon_prefix">Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
-                <textarea id="preparation" name="preparation" class="materialize-textarea"></textarea>
+                <textarea id="preparation" name="preparation" class="materialize-textarea" required></textarea>
                 <label for="icon_prefix2">Preparation Steps</label>
             </div>
         </div>
