@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Modak&family=Roboto:ital,wght@1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body {
+html {
+  height: 100%;
   letter-spacing: 2px;
   background: linear-gradient(
-                     rgba(20, 20, 20, 0.5),
-                     rgba(20, 20, 20, 0.5)),
-                     url( "../images/home-page.jpg");
+                     rgba(20, 20, 20, 0.7),
+                     rgba(20, 20, 20, 0.7)),
+                     url( "../images/recipes.jpg");
 }
 
 .container {
@@ -37,51 +38,88 @@ hr {
   border-radius: 50%;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.wrap {
+  height: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  margin: 50px 0 0 400px;
 }
 
-.buttons {
-  margin: 10%;
-  text-align: center;
-}
-
-.btn-hover {
-  width: 200px;
-  font-size: 16px;
-  font-weight: 600;
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
   color: #fff;
-  cursor: pointer;
-  margin: 20px;
-  height: 55px;
-  text-align:center;
+  background: #4FD1C5;
+ background: linear-gradient(90deg, #FF5722 0%, #FF9800 100%);
   border: none;
-  background-size: 300% 100%;
-
-  border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-
-.btn-hover:hover {
-  background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-
-.btn-hover:focus {
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px #ff980073;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
   outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #FFC107;
+  box-shadow: 0 0 60px #FF9800;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
 }
 
-.btn-hover.color-2 {
-  background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
-  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+.button:hover, .button:focus {
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #FF9800;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
 }
 
 /*------------------------ Sidebar --*/
@@ -120,23 +158,26 @@ hr {
   font-weight: 400 !important;
 }
 
-div.content {
+.content {
   margin-left: 200px;
   padding: 1px 16px;
   height: 100%;
 }
 
 /*------------------------ Recipes --*/
+nav {
+  color: #fff;
+  background-color: #5c9c9c8f;
+  width: 100%;
+  margin-top: 5px;
+}
+
 .food-name {
   text-transform: capitalize;
 }
 
 .country-name {
   text-transform: uppercase;
-}
-
-.ul-recipes {
-    margin-top: 50px;
 }
 
 .small-btn {
@@ -153,8 +194,23 @@ div.content {
     line-height: 35px;
 }
 
-.collapsible-body p {
+.collapsible-body p,h6 {
   color: #fff;
+}
+
+.collapsible-body h6 {
+  font-weight: 400;
+  font-size: 120%;
+  text-transform: uppercase;
+  color: orange;
+}
+
+.preparation-steps {
+  margin-top: 40px;
+}
+
+.ul-recipes {
+  background-color: #00000085;
 }
 
 /*------------------------ AddRecipe --*/
@@ -170,6 +226,14 @@ div.content {
   color: #fff;
 }
 
+.input-field label {
+  color: #fff;
+}
+
+.food-icon {
+  color: #ff9800;
+}
+
 .country-icon {
   color: #03a9f4 !important;
 }
@@ -183,16 +247,31 @@ div.content {
     margin-left: 50px;
 }
 
-.cancel-btn {
-    margin-left: 5px;
-    background-color: #757575;
+/*---------------------------------------------------- @media screen max-width: 1030px --*/
+@media screen and (max-width: 1030px) {
+  .wrap {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    margin: 50px 0 0 200px;
+  }
 }
 
-.cancel-btn:hover {
-    background-color: #a5a5a5;
+/*---------------------------------------------------- @media screen max-width: 800px --*/
+@media screen and (max-width: 800px) {
+  .wrap {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    margin: 50px 0 0 100px;
+  }
 }
 
-
+/*---------------------------------------------------- @media screen max-width: 700px --*/
 @media screen and (max-width: 700px) {
     .sidebar {
       width: 100%;
@@ -202,7 +281,8 @@ div.content {
     }
 
     .sidebar a {text-align: center;}
-    div.content {margin-left: 0;}
+
+    .content {margin-left: 0;}
 
     h1,h2,h5 {
       text-align: center;
@@ -228,54 +308,17 @@ div.content {
       border-radius: 50%;
     }
 
-    * {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-    .buttons {
-      margin: 10%;
-      text-align: center;
-    }
-
-    .btn-hover {
-      width: 200px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      cursor: pointer;
-      margin: 20px;
-      height: 55px;
-      text-align:center;
-      border: none;
-      background-size: 300% 100%;
-
-      border-radius: 50px;
-      moz-transition: all .4s ease-in-out;
-      -o-transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease-in-out;
-      transition: all .4s ease-in-out;
-    }
-
-    .btn-hover:hover {
-      background-position: 100% 0;
-      moz-transition: all .4s ease-in-out;
-      -o-transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease-in-out;
-      transition: all .4s ease-in-out;
-    }
-
-    .btn-hover:focus {
-      outline: none;
-    }
-
-    .btn-hover.color-2 {
-      background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
-      box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+    .wrap {
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      margin: 50px 0 120px 40px;
     }
   }
 
+/*---------------------------------------------------- @media screen max-width: 500px --*/
 @media screen and (max-width: 400px) {
     .sidebar a {
       text-align: center;
@@ -309,51 +352,24 @@ div.content {
       border-radius: 50%;
     }
 
-    * {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-    .buttons {
-      margin: 10%;
-      text-align: center;
-    }
-
-    .btn-hover {
-      width: 200px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      cursor: pointer;
-      margin: 20px;
-      height: 55px;
-      text-align:center;
-      border: none;
-      background-size: 300% 100%;
-
-      border-radius: 50px;
-      moz-transition: all .4s ease-in-out;
-      -o-transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease-in-out;
-      transition: all .4s ease-in-out;
-    }
-
-    .btn-hover:hover {
-      background-position: 100% 0;
-      moz-transition: all .4s ease-in-out;
-      -o-transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease-in-out;
-      transition: all .4s ease-in-out;
-    }
-
-    .btn-hover:focus {
-      outline: none;
-    }
-
-    .btn-hover.color-2 {
-      background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
-      box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+    .wrap {
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      margin: auto;
     }
   }
 
+/*---------------------------------------------------- @media screen max-width: 400px --*/
+@media screen and (max-width: 400px) {
+  .wrap {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+  }
+  }
