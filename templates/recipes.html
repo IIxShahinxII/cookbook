@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<!-- <nav>
+    <div class="nav-wrapper">
+        <form>
+            <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav> -->
+
 <ul class="collapsible ul-recipes">
     {% for recipe in recipes %}
     <li>
@@ -12,24 +25,23 @@
             </div>
             <div class="col s4 recipe-headline food-name">
                 <strong>
-                    <span>Food => {{recipe.food_name}}</span>
+                    <span><i class="material-icons prefix food-icon">local_dining</i>{{recipe.food_name}}</span>
                 </strong>
             </div>
             <div class="col s4 recipe-headline country-name">
                 <strong>
-                    <span>Country => {{recipe.country}}</span>
+                    <span><i class="material-icons prefix country-icon">public</i>{{recipe.country}}</span>
                 </strong>
             </div>
         </div>
         <div class="collapsible-body">
-            <p>{{recipe.ingredients}}</p>
-            <p>{{recipe.preparation}}</p>
+            <h6>Ingredients:</h6>
+            <p>=>{{recipe.ingredients}}</p>
+            <h6 class="preparation-steps">Preparation Steps:</h6>
+            <p>=>{{recipe.preparation}}</p>
         </div>
 
     </li>
     {% endfor %}
 </ul>
-<div>
-
-</div>
 {% endblock %}
