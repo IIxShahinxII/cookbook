@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Modak&family=Roboto:ital,wght@1,300;1,400;1,500;1,700;1,900&display=swap');
 
-html {
+body {
   height: 100%;
   letter-spacing: 2px;
   background: linear-gradient(
@@ -10,7 +10,9 @@ html {
 }
 
 .container {
-  width: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: auto;
 }
 
 /*------------------------ Home-page --*/
@@ -92,7 +94,7 @@ button:hover::before, button:focus::before {
   opacity: 1;
 }
 
-button::after {
+.button::after {
   content: '';
   width: 30px; height: 30px;
   border-radius: 100%;
@@ -124,13 +126,11 @@ button:hover::after, button:focus::after {
 
 /*------------------------ Sidebar --*/
 .sidebar {
-  margin-top: 5px;
-  margin-left: 5px;
   padding: 0;
   width: 200px;
   background-color: #02001f3b;
   position: fixed;
-  height: 99%;
+  height: 100%;
   overflow: auto;
 }
 
@@ -255,7 +255,7 @@ nav {
     align-items: center;
     justify-content: center;
     position: fixed;
-    margin: 50px 0 0 200px;
+    margin: 50px 0 0 150px;
   }
 }
 
@@ -267,7 +267,7 @@ nav {
     align-items: center;
     justify-content: center;
     position: fixed;
-    margin: 50px 0 0 100px;
+    margin: 30px 0 0 0;
   }
 }
 
