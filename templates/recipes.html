@@ -15,23 +15,25 @@
 
 <ul class="collapsible ul-recipes">
     {% for recipe in recipes %}
-    <li>
-        <div class="collapsible-header">
-            <div class="col s4">
-                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                    class="waves-effect waves-light btn small-btn">Edit</a>
-                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                    class="waves-effect waves-light btn small-btn" style="background-color: #ce1515c4;">Delete</a>
-            </div>
-            <div class="col s4 recipe-headline food-name">
-                <strong>
-                    <span><i class="material-icons prefix food-icon">local_dining</i>{{recipe.food_name}}</span>
-                </strong>
-            </div>
-            <div class="col s4 recipe-headline country-name">
-                <strong>
-                    <span><i class="material-icons prefix country-icon">public</i>{{recipe.country}}</span>
-                </strong>
+    <li class="row our-row">
+        <div class="collapsible-header col s12">
+            <div class="row our-row">
+                <div class="col s12 m5 recipe-headline food-name">
+                    <strong>
+                        <span><i class="material-icons prefix food-icon">local_dining</i>{{recipe.food_name}}</span>
+                    </strong>
+                </div>
+                <div class="col s12 m4 recipe-headline country-name">
+                    <strong>
+                        <span><i class="material-icons prefix country-icon">public</i>{{recipe.country}}</span>
+                    </strong>
+                </div>
+                <div class="col s12 m3 recipe-headline">
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                        class="waves-effect waves-light btn small-btn">Edit</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                        class="waves-effect waves-light btn small-btn" style="background-color: #ce1515c4;">Delete</a>
+                </div>
             </div>
         </div>
         <div class="collapsible-body">
