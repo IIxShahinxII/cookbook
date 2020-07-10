@@ -159,6 +159,14 @@ button:hover::after, button:focus::after {
 }
 
 /*------------------------ Recipes --*/
+.search-bar {
+  background-color: #2bbbad;
+}
+
+.placeholder {
+  color: #fff;
+}
+
 .our-row {
   margin-bottom: 0;
   width: 100%;
@@ -193,6 +201,15 @@ button:hover::after, button:focus::after {
   font-size: 120%;
   text-transform: uppercase;
   color: orange;
+}
+
+.duration-serving {
+  color: orange;
+  line-height: 35px;
+}
+
+.duration, .serving {
+  color: #fff;
 }
 
 .preparation-steps {
