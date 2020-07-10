@@ -7,15 +7,19 @@ body {
                      rgba(20, 20, 20, 0.7),
                      rgba(20, 20, 20, 0.7)),
                      url( "../images/recipes.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: auto;
+.our-container {
+  display: flex;
 }
 
 /*------------------------ Home-page --*/
+.homepage-text {
+  padding: 30px 60px 30px 60px !important;
+}
+
 h1,h2,h5 {
   text-align: center;
   color: #fff;
@@ -45,21 +49,20 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  margin: 50px 0 0 400px;
+  margin-top: 70px;
 }
 
 .button {
-  min-width: 300px;
-  min-height: 60px;
-  font-family: 'Nunito', sans-serif;
+  width: 150px;
+  height: 60px;
+  font-family: 'Roboto', sans-serif;
   font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 700;
   color: #fff;
   background: #4FD1C5;
- background: linear-gradient(90deg, #FF5722 0%, #FF9800 100%);
+  background: linear-gradient(90deg, #FF5722 0%, #FF9800 100%);
   border: none;
   border-radius: 1000px;
   box-shadow: 12px 12px 24px #ff980073;
@@ -73,7 +76,7 @@ hr {
 button::before {
 content: '';
   border-radius: 1000px;
-  min-width: calc(300px + 12px);
+  min-width: calc(150px + 12px);
   min-height: calc(60px + 12px);
   border: 6px solid #FFC107;
   box-shadow: 0 0 60px #FF9800;
@@ -92,18 +95,6 @@ content: '';
 
 button:hover::before, button:focus::before {
   opacity: 1;
-}
-
-.button::after {
-  content: '';
-  width: 30px; height: 30px;
-  border-radius: 100%;
-  border: 6px solid #FF9800;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 button:hover::after, button:focus::after {
@@ -125,13 +116,18 @@ button:hover::after, button:focus::after {
 }
 
 /*------------------------ Sidebar --*/
+.sidebar-wrap {
+  width: 200px;
+  position: fixed;
+  height: 100%;
+}
+
 .sidebar {
-  padding: 0;
   width: 200px;
   background-color: #02001f3b;
   position: fixed;
-  height: 100%;
   overflow: auto;
+  height: 100%;
 }
 
 .sidebar a {
@@ -159,17 +155,13 @@ button:hover::after, button:focus::after {
 }
 
 .content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 100%;
+  margin: 60px 60px 60px 260px;
 }
 
 /*------------------------ Recipes --*/
-nav {
-  color: #fff;
-  background-color: #5c9c9c8f;
+.our-row {
+  margin-bottom: 0;
   width: 100%;
-  margin-top: 5px;
 }
 
 .food-name {
@@ -189,9 +181,7 @@ nav {
 }
 
 .recipe-headline {
-    width: 33%;
-    padding-left: 20px;
-    line-height: 35px;
+    line-height: 55px;
 }
 
 .collapsible-body p,h6 {
@@ -247,129 +237,17 @@ nav {
     margin-left: 50px;
 }
 
-/*---------------------------------------------------- @media screen max-width: 1030px --*/
-@media screen and (max-width: 1030px) {
-  .wrap {
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    margin: 50px 0 0 150px;
-  }
+/*---------------------------------------------------- @media screen max-width: 990px --*/
+@media screen and (max-width: 990px) {
+  .content {
+    margin: 60px 10px 60px 210px;
 }
 
-/*---------------------------------------------------- @media screen max-width: 800px --*/
-@media screen and (max-width: 800px) {
   .wrap {
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    margin: 30px 0 0 0;
+    margin-top: 70px;
   }
 }
-
-/*---------------------------------------------------- @media screen max-width: 700px --*/
-@media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      margin: 0;
-      height: auto;
-      position: relative;
-    }
-
-    .sidebar a {text-align: center;}
-
-    .content {margin-left: 0;}
-
-    h1,h2,h5 {
-      text-align: center;
-      color: #fff;
-      margin-top: 75px;
-    }
-
-    h1,h2 {
-      font-family: "Pacifico", sans-serif;
-      letter-spacing: 5px;
-    }
-
-    h5 {
-      font-family: "Roboto", sans-serif;
-    }
-
-    hr {
-      background-color: orange;
-      height: 3px;
-      width: 75%;
-      margin-top: 75px;
-      border: none;
-      border-radius: 50%;
-    }
-
-    .wrap {
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      margin: 50px 0 120px 40px;
-    }
-  }
-
-/*---------------------------------------------------- @media screen max-width: 500px --*/
-@media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-    .sidebar {
-      margin: 0;
-
-    }
-    h1,h2,h5 {
-      text-align: center;
-      color: #fff;
-      margin-top: 75px;
-    }
-
-    h1,h2 {
-      font-family: "Pacifico", sans-serif;
-      letter-spacing: 5px;
-    }
-
-    h5 {
-      font-family: "Roboto", sans-serif;
-    }
-
-    hr {
-      background-color: orange;
-      height: 3px;
-      width: 75%;
-      margin-top: 75px;
-      border: none;
-      border-radius: 50%;
-    }
-
-    .wrap {
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      margin: auto;
-    }
-  }
-
-/*---------------------------------------------------- @media screen max-width: 400px --*/
-@media screen and (max-width: 400px) {
-  .wrap {
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    margin: auto;
-  }
-  }
