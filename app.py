@@ -17,6 +17,14 @@ def home_page():
     return render_template("index.html")
 
 
+@app.route('/search_recipe', methods=['POST'])
+def search_recipe():
+    search_recipes = request.form.get("search_recipes")
+    mongo.db.recipes.create_index([("$**", 'text')])
+    recipe = mongo.db.recipes.find({"$text": {"$search": search_recipes}})
+    return render_template('recipes.html', recipes=recipe, search=True)
+
+
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
@@ -45,6 +53,8 @@ def update_recipe(recipe_id):
     recipes = mongo.db.recipes
     recipes.update({"_id": ObjectId(recipe_id)},
                    {
+        'duration': request.form.get('duration'),
+        'serving': request.form.get('serving'),
         'food_name': request.form.get('food_name'),
         'country': request.form.get('country'),
         'ingredients': request.form.get('ingredients'),
