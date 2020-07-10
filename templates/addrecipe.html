@@ -5,6 +5,18 @@
 <div class="row">
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12 add-recipe-form">
         <div class="row">
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">access_alarm</i>
+                <input id="duration" name="duration" type="text" class="validate" required>
+                <label for="icon_prefix">Duration</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">people</i>
+                <input id="serving" name="serving" type="tel" class="validate" required>
+                <label for="icon_telephone">Serving</label>
+            </div>
+        </div>
+        <div class="row">
             <div class="input-field col-xsm s12">
                 <i class="material-icons prefix food-icon">local_dining</i>
                 <input id="food_name" name="food_name" type="text" class="validate" required>
@@ -29,7 +41,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
                 <textarea id="preparation" name="preparation" class="materialize-textarea" required></textarea>
-                <label for="icon_prefix2">Preparation Steps</label>
+                <label for="icon_prefix2">Preparation</label>
             </div>
         </div>
         <div class="row">
