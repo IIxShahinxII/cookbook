@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- <nav>
+<nav class="search-bar">
     <div class="nav-wrapper">
-        <form>
+        <form action="{{url_for('search_recipe')}}" method="POST">
             <div class="input-field">
-                <input id="search" type="search" required>
+                <input id="search_recipes" name="search_recipes" type="search" placeholder="Search ..." required>
                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
             </div>
         </form>
     </div>
-</nav> -->
+</nav>
 
 <ul class="collapsible ul-recipes">
     {% for recipe in recipes %}
@@ -37,6 +37,9 @@
             </div>
         </div>
         <div class="collapsible-body">
+            <span class="duration-serving">duration: </span><span class="duration">{{recipe.duration}}</span>
+            <br>
+            <span class="duration-serving">Serving: </span><span class="serving">{{recipe.serving}}</span>
             <h6>Ingredients:</h6>
             <p>=>{{recipe.ingredients}}</p>
             <h6 class="preparation-steps">Preparation Steps:</h6>
