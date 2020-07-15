@@ -5,8 +5,9 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'cook-book'
-app.config["MONGO_URI"] = 'mongodb+srv://iixshahinxii:Shahin1371@firstcluster-4kc0v.mongodb.net/cook-book?retryWrites=true&w=majority'
+app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
@@ -70,6 +71,7 @@ def delete_recipe(recipe_id):
 
 
 if __name__ == '__main__':
+    print(os.environ.get("IP"))
     app.run(host=os.environ.get('IP'),
             port=(os.environ.get('PORT')),
             debug=True)
