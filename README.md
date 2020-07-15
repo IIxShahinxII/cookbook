@@ -90,7 +90,7 @@ User stories from the UX section were tested to see if they all work as intended
 - Go to the search bar above the recipe's lists and write any key word to search for the recipe.
 - Press Enter.
 - A list of recipes will be displayed.
-- If no recipe found then a **No Result Found** will be displayed.
+- If no recipe found then nothing will be displayed.
 3. *AS a user, I want to store/add and share my recipes online with others.*
 - Go to the **Create** Page.
 - Fill out the form. All fields are required to fill in.
@@ -140,7 +140,7 @@ The code has been validated by using;
 8. Then push these files to **github** by running command **git push**
 9. Go back to **Heroku** to your **App** and click on **Deploy** tab.
 10. Then go to **Deployment Method** and click on **Github Connect to Github**.
-11. Then make sure your **Github Profile** is displayed and add you **repository name** and click on **Search**.
+11. Then make sure your **Github Profile** is displayed and add your **repository name** and click on **Search**.
 12. Once it find your repository then click on **Connect**.
 13. Now go to **Settings** at the top. Then click on **Reveal Config Vars**.
 14. In **Config Vars** add **IP** with value **0.0.0.0** then add **PORT** as **5000** then add **SECRET_KEY** then add **MONGO_URI** and then add **MONGO_DBNAME** which is the name of database.
